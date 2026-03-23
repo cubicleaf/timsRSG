@@ -4,279 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Song Recommender</title>
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <div id="root"></div>
-
   <script type="text/babel">
     const { useState } = React;
-
     function SongRecommender() {
-      const [songs, setSongs] = useState([
-        { 
-          title: "竈門炭治郎のうた", 
-          artist: "Akano", 
-          spotifyUrl: "https://open.spotify.com/track/7Ai5pAx4S93BJsZnaLdTnf?si=a07d1fbe03c44ce3", 
-          youtubeUrl: "https://youtu.be/QnkqCv0dZTk?si=JRkm9JgOFSX4KSiU", 
+      const [songs] = useState([
+        {
+          title: "竈門炭治郎のうた",
+          artist: "Akano",
+          spotifyUrl: "https://open.spotify.com/track/7Ai5pAx4S93BJsZnaLdTnf?si=a07d1fbe03c44ce3",
+          youtubeUrl: "https://youtu.be/QnkqCv0dZTk?si=JRkm9JgOFSX4KSiU",
           bio: "Composed by Go Shiina for the anime Demon Slayer: Kimetsu no Yaiba, \"Kamado Tanjirou no Uta\" is a lullaby-like insert song that captures protagonist Tanjiro's determination to protect his sister Nezuko after tragedy strikes. Filipino YouTube cover artist Akano specializes in reimagining anime and video game soundtracks, bringing a dedicated fan's passion and vocal precision to this emotional ballad."
         },
-        { 
-          title: "Clair de Lune - Arr. for Theremin and Voice", 
-          artist: "Claude Debussy, Carolina Eyck", 
-          spotifyUrl: "https://open.spotify.com/track/1lM0wFkaU5BhpbkmAefcYT?si=49d31e59f64a4714", 
-          youtubeUrl: "https://www.youtube.com/watch?v=Ntri-r3O5ig&list=RDNtri-r3O5ig&start_radio=1", 
+        {
+          title: "Clair de Lune - Arr. for Theremin and Voice",
+          artist: "Claude Debussy, Carolina Eyck",
+          spotifyUrl: "https://open.spotify.com/track/1lM0wFkaU5BhpbkmAefcYT?si=49d31e59f64a4714",
+          youtubeUrl: "https://www.youtube.com/watch?v=Ntri-r3O5ig&list=RDNtri-r3O5ig&start_radio=1",
           bio: "Claude Debussy's \"Clair de Lune\" is an impressionist piano piece evoking moonlight through gentle, flowing melodies. German-sorbian theremin virtuoso Carolina Eyck reimagines it with theremin and wordless vocals that blend into ghostly, otherworldly textures—transforming Debussy's intimate nocturne into something ethereal and vast."
         },
-        { 
-          title: "Damocles", 
-          artist: "Sleep Token", 
-          spotifyUrl: "https://open.spotify.com/track/1ulH5PIntNj0ro2K69W4Fx?si=f03b13609aad4882", 
-          youtubeUrl: "https://www.youtube.com/watch?v=0NDqYZVbpho", 
+        {
+          title: "Damocles",
+          artist: "Sleep Token",
+          spotifyUrl: "https://open.spotify.com/track/1ulH5PIntNj0ro2K69W4Fx?si=f03b13609aad4882",
+          youtubeUrl: "https://www.youtube.com/watch?v=0NDqYZVbpho",
           bio: "Sleep Token is an anonymous British band that blends alternative metal, progressive rock, indie pop, and R&B into genre-defying soundscapes. \"Damocles\" is a piano-driven ballad from their 2025 album Even in Arcadia that builds into heavier territory, exploring the weight of unseen struggles and the pressure of fame with vulnerable, introspective lyrics about fear of being forgotten when success fades."
         },
-        { 
-          title: "愚人節快樂", 
-          artist: "盧廣仲", 
-          spotifyUrl: "https://open.spotify.com/track/2FQE7XVMDtuHjkjY0D1uwj", 
-          youtubeUrl: "https://www.youtube.com/watch?v=QVIrAWjB2ZU", 
+        {
+          title: "愚人節快樂",
+          artist: "盧廣仲",
+          spotifyUrl: "https://open.spotify.com/track/2FQE7XVMDtuHjkjY0D1uwj",
+          youtubeUrl: "https://www.youtube.com/watch?v=QVIrAWjB2ZU",
           bio: "Taiwanese indie singer-songwriter Crowd Lu is known for his warm vocals and heartfelt compositions about everyday life. This cover of independent musician Chen Zhu's song captures the bittersweet reality of confessing hidden feelings only on April Fool's Day—when truth can hide behind humor. Released on April 1st, 2025 as the first single from Lu's upcoming covers album, the song explores the painful courage of unrequited love."
         },
-        { 
-          title: "erstersommerohnedich", 
-          artist: "Pashanim", 
-          spotifyUrl: "https://open.spotify.com/track/0Bf7Lc7d6gE3xUDCePUvV7?si=cadeb69d97e04145", 
-          youtubeUrl: "https://www.youtube.com/watch?v=dCcx0bJ1fgk", 
+        {
+          title: "erstersommerohnedich",
+          artist: "Pashanim",
+          spotifyUrl: "https://open.spotify.com/track/0Bf7Lc7d6gE3xUDCePUvV7?si=cadeb69d97e04145",
+          youtubeUrl: "https://www.youtube.com/watch?v=dCcx0bJ1fgk",
           bio: "Berlin-based German rapper Pashanim blends trap, hip-hop, and melodic elements rooted in his Kreuzberg neighborhood. Released September 2025 and produced with Stickle, \"erstersommerohnedich\" (translating to \"first summer without you\") combines slow piano chords with trap beats to explore the bittersweet aftermath of a relationship—the gaps left behind, the mix of closeness and distance, and the emotional weight of moving through summer alone."
         },
-        { 
-          title: "Post Sex Clarity", 
-          artist: "Lola Young", 
-          spotifyUrl: "https://open.spotify.com/track/1n4Y7LSSZ38HgEdpPpivpg?si=4864275fd8b44aa3", 
-          youtubeUrl: "https://www.youtube.com/watch?v=2HuHrO8vL8k&list=RD2HuHrO8vL8k&start_radio=1", 
+        {
+          title: "Post Sex Clarity",
+          artist: "Lola Young",
+          spotifyUrl: "https://open.spotify.com/track/1n4Y7LSSZ38HgEdpPpivpg?si=4864275fd8b44aa3",
+          youtubeUrl: "https://www.youtube.com/watch?v=2HuHrO8vL8k&list=RD2HuHrO8vL8k&start_radio=1",
           bio: "South London singer-songwriter Lola Young blends soul, R&B, and pop with brutally honest lyrics about love and vulnerability. \"Post Sex Clarity\" flips the male-centric phrase \"post-nut clarity\" into something tender and liberating—exploring how real connection lingers beyond physical intimacy."
         },
-        { 
-          title: "This Is for You", 
-          artist: "Aven", 
-          spotifyUrl: "https://open.spotify.com/track/7ttMZg1ENJPDXYk6BmPVhI", 
-          youtubeUrl: "https://www.youtube.com/watch?v=36Jf6xBEi6E&list=RD36Jf6xBEi6E&start_radio=1", 
+        {
+          title: "This Is for You",
+          artist: "Aven",
+          spotifyUrl: "https://open.spotify.com/track/7ttMZg1ENJPDXYk6BmPVhI",
+          youtubeUrl: "https://www.youtube.com/watch?v=36Jf6xBEi6E&list=RD36Jf6xBEi6E&start_radio=1",
           bio: "\"This Is for You\" explores hopelessness and pain from the perspective of a person observing the chaos and interpersonal disconnection of modernity from doomscrolling to financial insecurity. The artist \"Aven\" has no available biography or background information, with their entire discography appearing on streaming platforms only in 2025—a pattern consistent with AI-created content."
         },
-        { 
-          title: "Вальс-Бостон", 
-          artist: "Александр Розенбаум", 
-          spotifyUrl: "https://open.spotify.com/track/4I4zGHJC4P91sd7DAQFNHY?si=9915dbf22bb645e1", 
-          youtubeUrl: "https://www.youtube.com/watch?v=Kk74cGG3IqM", 
+        {
+          title: "Вальс-Бостон",
+          artist: "Александр Розенбаум",
+          spotifyUrl: "https://open.spotify.com/track/4I4zGHJC4P91sd7DAQFNHY?si=9915dbf22bb645e1",
+          youtubeUrl: "https://www.youtube.com/watch?v=Kk74cGG3IqM",
           bio: "Alexander Rosenbaum who is from Saint Petersburg is known for his poetic storytelling, often about Leningrad, the Soviet-Afghan War, and Russian life. \"Вальс-Бостон\" (\"Boston Waltz\") is a poetic ballad blending bardic storytelling with gentle waltz rhythms. The song personifies autumn as a wistful dancer swirling through yellow leaves, evoking memory, aging, and the beauty of impermanence. Known for his deep voice and narrative lyricism, Rosenbaum turns a simple seasonal image into a meditation on time's slow dance—melancholy yet graceful, like the Boston waltz itself."
         }
       ]);
-      
+
       const [currentSong, setCurrentSong] = useState(null);
       const [lastSongIndex, setLastSongIndex] = useState(null);
       const [isAnimating, setIsAnimating] = useState(false);
-      const [masterMode, setMasterMode] = useState(false);
-      const [showPasswordInput, setShowPasswordInput] = useState(false);
-      const [password, setPassword] = useState('');
-      const [editingIndex, setEditingIndex] = useState(null);
-      const [editTitle, setEditTitle] = useState('');
-      const [editArtist, setEditArtist] = useState('');
-      const [editSpotifyUrl, setEditSpotifyUrl] = useState('');
-      const [editYoutubeUrl, setEditYoutubeUrl] = useState('');
-      const [editBio, setEditBio] = useState('');
       const [buttonVisible, setButtonVisible] = useState(true);
       const [buttonFading, setButtonFading] = useState(false);
 
       const generateRecommendation = () => {
         if (isAnimating) return;
-        
+
         setIsAnimating(true);
         setButtonFading(true);
-        
+
         setTimeout(() => {
           setButtonVisible(false);
         }, 500);
-        
+
         setTimeout(() => {
           let randomIndex;
           do {
             randomIndex = Math.floor(Math.random() * songs.length);
           } while (randomIndex === lastSongIndex && songs.length > 1);
-          
+
           setLastSongIndex(randomIndex);
           setCurrentSong(songs[randomIndex]);
           setIsAnimating(false);
         }, 1000);
       };
 
-      const handleMasterBarClick = () => {
-        setShowPasswordInput(true);
-      };
-
-      const handlePasswordChange = (e) => {
-        const value = e.target.value;
-        setPassword(value);
-        if (value === 'musicmaester') {
-          setMasterMode(true);
-          setShowPasswordInput(false);
-          setPassword('');
-        }
-      };
-
-      const handleEditClick = (index) => {
-        setEditingIndex(index);
-        setEditTitle(songs[index].title);
-        setEditArtist(songs[index].artist);
-        setEditSpotifyUrl(songs[index].spotifyUrl);
-        setEditYoutubeUrl(songs[index].youtubeUrl);
-        setEditBio(songs[index].bio);
-      };
-
-      const handleSaveEdit = () => {
-        const newSongs = [...songs];
-        newSongs[editingIndex] = { 
-          title: editTitle, 
-          artist: editArtist,
-          spotifyUrl: editSpotifyUrl,
-          youtubeUrl: editYoutubeUrl,
-          bio: editBio
-        };
-        setSongs(newSongs);
-        setEditingIndex(null);
-      };
-
-      const handleCancelEdit = () => {
-        setEditingIndex(null);
-      };
-
-      const handleSaveChanges = () => {
-        setMasterMode(false);
-        setCurrentSong(null);
-        setLastSongIndex(null);
-        setButtonVisible(true);
-        setButtonFading(false);
-      };
-
-      if (masterMode) {
-        return (
-          <div className="min-h-screen bg-zinc-900 text-white p-8">
-            <h2 className="text-2xl font-bold mb-8 text-center">Master Mode - Edit Songs</h2>
-            <div className="max-w-2xl mx-auto space-y-4">
-              {songs.map((song, index) => (
-                <div key={index} className="bg-zinc-800 p-4 rounded-lg">
-                  {editingIndex === index ? (
-                    <div className="space-y-3">
-                      <input
-                        type="text"
-                        value={editTitle}
-                        onChange={(e) => setEditTitle(e.target.value)}
-                        className="w-full bg-zinc-700 text-white px-3 py-2 rounded"
-                        placeholder="Song Title"
-                      />
-                      <input
-                        type="text"
-                        value={editArtist}
-                        onChange={(e) => setEditArtist(e.target.value)}
-                        className="w-full bg-zinc-700 text-white px-3 py-2 rounded"
-                        placeholder="Artist"
-                      />
-                      <input
-                        type="text"
-                        value={editSpotifyUrl}
-                        onChange={(e) => setEditSpotifyUrl(e.target.value)}
-                        className="w-full bg-zinc-700 text-white px-3 py-2 rounded"
-                        placeholder="Spotify URL"
-                      />
-                      <input
-                        type="text"
-                        value={editYoutubeUrl}
-                        onChange={(e) => setEditYoutubeUrl(e.target.value)}
-                        className="w-full bg-zinc-700 text-white px-3 py-2 rounded"
-                        placeholder="YouTube URL"
-                      />
-                      <textarea
-                        value={editBio}
-                        onChange={(e) => setEditBio(e.target.value)}
-                        className="w-full bg-zinc-700 text-white px-3 py-2 rounded h-24 resize-none"
-                        placeholder="Artist Bio (a few sentences about the artist/band and their genre)"
-                      />
-                      <div className="flex gap-2">
-                        <button
-                          onClick={handleSaveEdit}
-                          className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition-colors"
-                        >
-                          Save
-                        </button>
-                        <button
-                          onClick={handleCancelEdit}
-                          className="bg-zinc-600 hover:bg-zinc-700 px-4 py-2 rounded transition-colors"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
-                    <div 
-                      onClick={() => handleEditClick(index)}
-                      className="cursor-pointer hover:bg-zinc-700 p-2 rounded transition-colors"
-                    >
-                      <div className="font-semibold">{song.title}</div>
-                      <div className="text-zinc-400">{song.artist}</div>
-                    </div>
-                  )}
-                </div>
-              ))}
-              <button
-                onClick={handleSaveChanges}
-                className="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold mt-8 transition-colors"
-              >
-                Save Changes
-              </button>
-            </div>
-          </div>
-        );
-      }
-
       return (
         <div className="min-h-screen bg-zinc-900 text-white relative">
-          <div 
-            onClick={handleMasterBarClick}
-            className="bg-zinc-800 py-3 px-6 cursor-pointer"
-          >
-            {showPasswordInput ? (
-              <div className="max-w-xs">
-                <input
-                  type="password"
-                  value={password}
-                  onChange={handlePasswordChange}
-                  placeholder="Enter password..."
-                  className="bg-zinc-700 text-white px-3 py-1 rounded w-full text-sm focus:outline-none focus:ring-1 focus:ring-zinc-600"
-                  autoFocus
-                />
-              </div>
-            ) : (
-              <div className="text-zinc-500 text-sm">master mode</div>
-            )}
-          </div>
-
-          <div className="flex flex-col items-center justify-center min-h-[calc(100vh-60px)] px-6">
+          <div className="flex flex-col items-center justify-center min-h-screen px-6">
             {currentSong && !isAnimating && (
               <div className="animate-fade-in text-center px-4 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-10">
                 <div className="space-y-2 max-w-sm mx-auto">
                   <div className="text-2xl sm:text-3xl font-bold leading-tight">{currentSong.title}</div>
                   <div className="text-lg sm:text-xl text-zinc-400">{currentSong.artist}</div>
                 </div>
-                
+
                 <div className="mt-6 max-w-sm mx-auto">
                   <div className="bg-white text-black font-semibold py-3 px-6 rounded-t-lg">
                     Listen Now
                   </div>
                   <div className="flex">
                     {currentSong.spotifyUrl && (
-                      
+                      <a
                         href={currentSong.spotifyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -288,7 +129,7 @@
                       </a>
                     )}
                     {currentSong.youtubeUrl && (
-                      
+                      <a
                         href={currentSong.youtubeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -301,7 +142,6 @@
                     )}
                   </div>
                 </div>
-
                 {currentSong.bio && (
                   <div className="mt-6 text-sm text-zinc-300 leading-relaxed" style={{ maxWidth: '400px', margin: '24px auto 0' }}>
                     {currentSong.bio}
@@ -309,16 +149,14 @@
                 )}
               </div>
             )}
-            
+
             {buttonVisible && (
               <button
                 onClick={generateRecommendation}
                 className={`text-white font-semibold text-base sm:text-lg px-8 sm:px-12 py-5 sm:py-6 rounded-full shadow-lg transform hover:scale-105 active:scale-95 w-full max-w-xs fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-500 ${
                   buttonFading ? 'opacity-0' : 'opacity-100'
                 }`}
-                style={{ 
-                  backgroundColor: '#FA8072'
-                }}
+                style={{ backgroundColor: '#FA8072' }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#FF6B5A'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#FA8072'}
               >
@@ -326,15 +164,10 @@
               </button>
             )}
           </div>
-
           <style>{`
             @keyframes fadeIn {
-              from {
-                opacity: 0;
-              }
-              to {
-                opacity: 1;
-              }
+              from { opacity: 0; }
+              to { opacity: 1; }
             }
             .animate-fade-in {
               animation: fadeIn 1s ease-out;
@@ -343,8 +176,8 @@
         </div>
       );
     }
-
-    ReactDOM.render(<SongRecommender />, document.getElementById('root'));
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<SongRecommender />);
   </script>
 </body>
 </html>
